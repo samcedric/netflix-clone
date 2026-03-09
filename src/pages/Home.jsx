@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import Navbar from "../component/Navbar.jsx";
 import BannerCarousel from "../component/BannerCarousel.jsx";
 import Filters from "../component/Filters.jsx";
-import MoviesTable from "../component/Movies.table.jsx";
+import MoviesList from "../component/MoviesList.jsx";
 import { movies as allMovies } from "../data/movies.js";
 import { useNavigate } from "react-router-dom";
 export default function Home() {
@@ -39,7 +39,7 @@ const openMovie = (id) => {
 
       <div className="mx-auto max-w-6xl px-4 py-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl md:text-2xl font-bold">Browse Movies</h2>
+          <h2 className="text-xl md:text-2xl font-bold">Popular on Netflix</h2>
         </div>
 
         <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-950 p-4">
@@ -53,7 +53,7 @@ const openMovie = (id) => {
             setQuery={setQuery}
           />
 
-          <MoviesTable movies={filtered} onOpenMovie={openMovie} />
+          <MoviesList movies={filtered} onOpenMovie={openMovie} />
         </div>
       </div>
     </div>
